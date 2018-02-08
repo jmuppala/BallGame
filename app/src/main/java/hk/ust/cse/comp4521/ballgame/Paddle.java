@@ -9,13 +9,11 @@ public class Paddle {
     private Paint paint; // paint style and color
     private Rect bounds;
     private int w;
-    private int movesize;
 
     public Paddle(int color) {
         paint = new Paint();
         paint.setColor(color);
         bounds = new Rect();
-        movesize = 20;
     }
 
     public void set(int x, int y, int width, int height) {
@@ -30,9 +28,9 @@ public class Paddle {
         bounds.set(xMin, yMin, xMax, yMax);
     }
 
-    public void moveright() {
+    public void moveright(int movesize) {
         // move the paddle to the right
-        if (xMax < w) {
+        if (xMax + movesize < w){
             xMin += movesize;
             xMax += movesize;
         }
@@ -40,9 +38,9 @@ public class Paddle {
         bounds.set(xMin, yMin, xMax, yMax);
     }
 
-    public void moveleft() {
+    public void moveleft(int movesize) {
         // move the paddle to the left
-        if (xMin > 0) {
+        if (xMin - movesize > 0){
             xMin -= movesize;
             xMax -= movesize;
         }

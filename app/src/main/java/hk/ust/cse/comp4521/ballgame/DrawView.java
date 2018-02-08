@@ -64,13 +64,13 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
         paddle.set(0, 0, w, h);
     }
 
-
-    public void right() {
-        paddle.moveright();
+    public void movePaddleRight(int movesize){
+        paddle.moveright(movesize);
     }
 
-    public void left() {
-        paddle.moveleft();
+
+    public void movePaddleLeft(int movesize){
+        paddle.moveleft(movesize);
     }
 
     @Override
