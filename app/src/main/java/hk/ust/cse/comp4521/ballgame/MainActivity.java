@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public void onPause(){
+        super.onPause();
+        drawview.stopGame();
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        drawview.releaseResources();
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.right:
